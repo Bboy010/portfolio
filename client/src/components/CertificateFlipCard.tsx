@@ -9,11 +9,15 @@ interface CertificateFlipCardProps {
   imageUrl?: string;
 }
 
-function getDriveViewUrl(lh3Url: string): string {
-  // Convert lh3.googleusercontent.com/d/FILE_ID → drive.google.com/file/d/FILE_ID/view
-  const match = lh3Url.match(/lh3\.googleusercontent\.com\/d\/([^?&/]+)/);
+function getDriveViewUrl(url: string): string {
+  // Extract the Drive FILE_ID from any supported URL shape and build a canonical view link.
+  // Supports: lh3.googleusercontent.com/d/ID, drive.google.com/thumbnail?id=ID, drive.google.com/file/d/ID/view
+  const match =
+    url.match(/lh3\.googleusercontent\.com\/d\/([^?&/]+)/) ||
+    url.match(/[?&]id=([^?&/]+)/) ||
+    url.match(/\/file\/d\/([^?&/]+)/);
   if (match) return `https://drive.google.com/file/d/${match[1]}/view`;
-  return lh3Url;
+  return url;
 }
 
 export default function CertificateFlipCard({ title, issuer, date, imageUrl }: CertificateFlipCardProps) {

@@ -9,8 +9,8 @@ export default function CV() {
   const { language, t } = useLanguage();
 
   const profileTitle = language === 'fr'
-    ? 'Doctorant en Microbiologie • Bioinformaticien • Spécialiste en IA'
-    : 'PhD Student Microbiologist • Bioinformatician • AI Specialist';
+    ? 'Ingénieur Datascience • Bioinformaticien • IA Agentique'
+    : 'Data Science Engineer • Bioinformatician • Agentic AI';
 
   const summaryTitle = language === 'fr' ? 'Résumé Professionnel' : 'Professional Summary';
   const skillsTitle = language === 'fr' ? 'Compétences Techniques' : 'Technical Skills';
@@ -64,6 +64,30 @@ export default function CV() {
       ];
 
   const certifications = [
+    {
+      title: 'Claude Code in Action',
+      issuer: 'Anthropic',
+      date: language === 'fr' ? 'Mai 2026' : 'May 2026',
+      imageUrl: 'https://drive.google.com/thumbnail?id=1oMwyf1DAwvSfCQpwYKVEMTkMwxvH2K-x&sz=w1000',
+    },
+    {
+      title: 'Claude Code 101',
+      issuer: 'Anthropic',
+      date: language === 'fr' ? 'Avril 2026' : 'April 2026',
+      imageUrl: 'https://drive.google.com/thumbnail?id=1cy1K6XLe9PFq1DCQAbL8MrTFaCKPZBo_&sz=w1000',
+    },
+    {
+      title: 'Machine Learning',
+      issuer: 'ALX Foundation',
+      date: language === 'fr' ? 'Avril 2026' : 'April 2026',
+      imageUrl: 'https://lh3.googleusercontent.com/d/1Pq-ubIykzMuoGs_CnBLt-Sf0g2rqEx_k',
+    },
+    {
+      title: language === 'fr' ? 'Ingénieur Datascience' : 'Data Science Engineer',
+      issuer: 'ALX Foundation',
+      date: language === 'fr' ? 'Avril 2026' : 'April 2026',
+      imageUrl: 'https://lh3.googleusercontent.com/d/1YPVN3udXf0jvWYcq-5sNHAyw4YtsU16I',
+    },
     {
       title: language === 'fr'
         ? 'Fondamentaux de la Science des Données en Médecine de Précision'
