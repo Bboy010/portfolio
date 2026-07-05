@@ -4,8 +4,8 @@ import { useLanguage } from '@/contexts/LanguageContext';
 
 const socialLinks = [
   { icon: Github,   href: 'https://github.com/Bboy010',                                          label: 'GitHub' },
-  { icon: Linkedin, href: 'https://www.linkedin.com/in/hongo-koffi-anderson-a0b5a7289/',        label: 'LinkedIn' },
-  { icon: Youtube,  href: 'https://www.youtube.com/@HongoKoffiAnderson',                        label: 'YouTube' },
+  { icon: Linkedin, href: 'https://www.linkedin.com/in/koffi-anderson-hongo-b165a4170/',        label: 'LinkedIn' },
+  { icon: Youtube,  href: 'https://www.youtube.com/@LearnerW',                        label: 'YouTube' },
   { icon: Mail,     href: 'mailto:hkoffianderson@gmail.com',                                    label: 'Email' },
   { icon: ExternalLink, href: 'https://orcid.org/0009-0007-9997-3070',                          label: 'ORCID' },
 ];
