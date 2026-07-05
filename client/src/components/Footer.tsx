@@ -50,11 +50,11 @@ export default function Footer() {
                 className="p-2 rounded-lg bg-muted hover:bg-primary hover:text-primary-foreground smooth-transition" aria-label="GitHub">
                 <Github size={20} />
               </a>
-              <a href="https://www.linkedin.com/in/hongo-koffi-anderson-a0b5a7289/" target="_blank" rel="noopener noreferrer"
+              <a href="https://www.linkedin.com/in/koffi-anderson-hongo-b165a4170/" target="_blank" rel="noopener noreferrer"
                 className="p-2 rounded-lg bg-muted hover:bg-primary hover:text-primary-foreground smooth-transition" aria-label="LinkedIn">
                 <Linkedin size={20} />
               </a>
-              <a href="https://www.youtube.com/@HongoKoffiAnderson" target="_blank" rel="noopener noreferrer"
+              <a href="https://www.youtube.com/@LearnerW" target="_blank" rel="noopener noreferrer"
                 className="p-2 rounded-lg bg-muted hover:bg-primary hover:text-primary-foreground smooth-transition" aria-label="YouTube">
                 <Youtube size={20} />
               </a>

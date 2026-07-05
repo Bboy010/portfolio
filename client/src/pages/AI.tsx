@@ -68,10 +68,14 @@ export default function AI() {
       ];
 
   const tools = [
-    { name: 'Claude AI', category: 'LLM' },
-    { name: 'ChatGPT', category: 'LLM' },
-    { name: 'Gemini', category: 'LLM' },
-    { name: 'OpenAI API', category: 'API' },
+    { name: 'Claude (Opus 4.8 / Fable 5)', category: 'LLM' },
+    { name: 'GPT-5.6', category: 'LLM' },
+    { name: 'Gemini 3.1 Pro', category: 'LLM' },
+    { name: 'Qwen 3.7', category: 'LLM' },
+    { name: 'DeepSeek V4', category: 'LLM' },
+    { name: 'Kimi K2.6', category: 'LLM' },
+    { name: 'Claude Code', category: fr ? 'IDE Agentique' : 'Agentic IDE' },
+    { name: 'Antigravity', category: fr ? 'IDE Agentique' : 'Agentic IDE' },
     { name: 'LangChain', category: 'Framework' },
     { name: 'Vector Databases', category: 'Infrastructure' },
     { name: 'Consensus AI', category: fr ? 'Outils de Recherche' : 'Research Tools' },
@@ -138,7 +142,7 @@ export default function AI() {
           </p>
           {/* LLM / AI model badges */}
           <div className="flex flex-wrap gap-2">
-            {['Claude', 'GPT-4', 'Gemini', 'LLaMA', 'Mistral', 'Prompt Engineering', 'RAG', 'MLOps'].map(label => (
+            {['Claude Fable 5', 'Claude Opus 4.8', 'GPT-5.6', 'Gemini 3.1 Pro', 'Qwen 3.7', 'DeepSeek V4', 'Claude Code', 'Prompt Engineering', 'RAG', 'MLOps'].map(label => (
               <span key={label} className="px-3 py-1 rounded-full bg-purple-100 dark:bg-purple-950/40 border border-purple-200/60 dark:border-purple-800/40 text-sm font-medium text-purple-700 dark:text-purple-300">
                 {label}
               </span>

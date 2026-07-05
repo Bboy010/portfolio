@@ -164,7 +164,7 @@ export default function CV() {
                 <div className="flex flex-col gap-2 text-foreground/60">
                   <p>📍 Abidjan, Treichville, Côte d'Ivoire</p>
                   <p>📧 hkoffianderson@gmail.com • 📱 +225 0748915342</p>
-                  <p>🔗 <a href="https://github.com/Bboy010" className="text-primary hover:underline">GitHub</a> • <a href="https://www.kaggle.com/hongo" className="text-primary hover:underline">Kaggle</a> • <a href="https://orcid.org/0009-0007-9997-3070" className="text-primary hover:underline">ORCID</a></p>
+                  <p>🔗 <a href="https://github.com/Bboy010" className="text-primary hover:underline">GitHub</a> • <a href="https://www.kaggle.com/hongokoffianderson" className="text-primary hover:underline">Kaggle</a> • <a href="https://orcid.org/0009-0007-9997-3070" className="text-primary hover:underline">ORCID</a></p>
                 </div>
               </div>
             </div>
