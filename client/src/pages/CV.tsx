@@ -65,6 +65,12 @@ export default function CV() {
 
   const certifications = [
     {
+      title: 'Build with the Anthropic API',
+      issuer: 'Anthropic',
+      date: language === 'fr' ? 'Octobre 2026' : 'October 2026',
+      imageUrl: 'https://drive.google.com/thumbnail?id=1i1yB_Aa3Lw_OXMrpoPzc1mRWsGk9LDjL&sz=w1000',
+    },
+    {
       title: 'Build with nf-core',
       issuer: 'Seqera - Nextflow Training Week 2026-Q3',
       date: language === 'fr' ? 'Octobre 2026' : 'October 2026',
