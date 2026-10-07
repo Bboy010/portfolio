@@ -68,12 +68,12 @@ export default function AI() {
       ];
 
   const tools = [
-    { name: 'Claude (Opus 4.8 / Fable 5)', category: 'LLM' },
-    { name: 'GPT-5.6', category: 'LLM' },
-    { name: 'Gemini 3.1 Pro', category: 'LLM' },
-    { name: 'Qwen 3.7', category: 'LLM' },
-    { name: 'DeepSeek V4', category: 'LLM' },
-    { name: 'Kimi K2.6', category: 'LLM' },
+    { name: 'Claude (Fable 5.1 / Opus 5.5)', category: 'LLM' },
+    { name: 'GPT-6.1 Sol', category: 'LLM' },
+    { name: 'Gemini 4 Argon', category: 'LLM' },
+    { name: 'Qwen 3.8 Max', category: 'LLM' },
+    { name: 'DeepSeek V4.1', category: 'LLM' },
+    { name: 'Kimi K3', category: 'LLM' },
     { name: 'Claude Code', category: fr ? 'IDE Agentique' : 'Agentic IDE' },
     { name: 'Antigravity', category: fr ? 'IDE Agentique' : 'Agentic IDE' },
     { name: 'LangChain', category: 'Framework' },
@@ -142,7 +142,7 @@ export default function AI() {
           </p>
           {/* LLM / AI model badges */}
           <div className="flex flex-wrap gap-2">
-            {['Claude Fable 5', 'Claude Opus 4.8', 'GPT-5.6', 'Gemini 3.1 Pro', 'Qwen 3.7', 'DeepSeek V4', 'Claude Code', 'Prompt Engineering', 'RAG', 'MLOps'].map(label => (
+            {['Claude Fable 5.1', 'Claude Opus 5.5', 'GPT-6.1 Sol', 'Gemini 4 Argon', 'Qwen 3.8 Max', 'DeepSeek V4.1', 'Claude Code', 'Prompt Engineering', 'RAG', 'MLOps'].map(label => (
               <span key={label} className="px-3 py-1 rounded-full bg-purple-100 dark:bg-purple-950/40 border border-purple-200/60 dark:border-purple-800/40 text-sm font-medium text-purple-700 dark:text-purple-300">
                 {label}
               </span>

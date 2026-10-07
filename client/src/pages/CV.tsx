@@ -65,6 +65,18 @@ export default function CV() {
 
   const certifications = [
     {
+      title: 'Build with nf-core',
+      issuer: 'Seqera - Nextflow Training Week 2026-Q3',
+      date: language === 'fr' ? 'Octobre 2026' : 'October 2026',
+      imageUrl: 'https://drive.google.com/thumbnail?id=1ejWlXu3fYx_jY1_sY-XaPvlLDhT6uoz4&sz=w1000',
+    },
+    {
+      title: 'Hello Nextflow',
+      issuer: 'Seqera - Nextflow Training Week 2026-Q3',
+      date: language === 'fr' ? 'Octobre 2026' : 'October 2026',
+      imageUrl: 'https://drive.google.com/thumbnail?id=1JXw4LHJbfJ2TH2uLvmSQC3hcY0twBDXQ&sz=w1000',
+    },
+    {
       title: 'Claude Code in Action',
       issuer: 'Anthropic',
       date: language === 'fr' ? 'Mai 2026' : 'May 2026',
