@@ -9,8 +9,8 @@ export default function CV() {
   const { language, t } = useLanguage();
 
   const profileTitle = language === 'fr'
-    ? 'Ingénieur Datascience • Bioinformaticien • IA Agentique'
-    : 'Data Science Engineer • Bioinformatician • Agentic AI';
+    ? 'Doctorant en Microbiologie & Bioinformatique • Nextflow/nf-core • IA Agentique'
+    : 'PhD Student in Microbiology & Bioinformatics • Nextflow/nf-core • Agentic AI';
 
   const summaryTitle = language === 'fr' ? 'Résumé Professionnel' : 'Professional Summary';
   const skillsTitle = language === 'fr' ? 'Compétences Techniques' : 'Technical Skills';
@@ -266,8 +266,8 @@ export default function CV() {
                 </h3>
                 <p className="text-purple-600 dark:text-purple-400 font-medium mb-2">
                   {language === 'fr'
-                    ? 'Université NANGUI Abrogoua • Mars 2024 - 2026'
-                    : 'NANGUI Abrogoua University • March 2024 - 2026'}
+                    ? 'Université NANGUI Abrogoua • Mars 2024 - Présent'
+                    : 'NANGUI Abrogoua University • March 2024 - Present'}
                 </p>
                 <p className="text-foreground/70">
                   {language === 'fr'
@@ -307,6 +307,41 @@ export default function CV() {
                     : 'Theme: Length-length relationship of shark species of the genus Carcharhinus'}
                 </p>
               </div>
+            </div>
+          </div>
+
+          {/* Publications */}
+          <div className="mb-12">
+            <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
+              <BookOpen size={32} className="text-primary" />
+              {language === 'fr' ? 'Publications' : 'Publications'}
+            </h2>
+            <div className="border-l-4 border-purple-500 pl-6">
+              <p className="text-xs font-semibold uppercase tracking-wide text-purple-600 dark:text-purple-400 mb-2">
+                {language === 'fr' ? 'Preprint • Auteur principal' : 'Preprint • First author'}
+              </p>
+              <h3 className="text-xl font-semibold mb-2">
+                Novel putative PETase candidates from metagenomic mining of Ebrié lagoon and Kassembié lake, Côte d'Ivoire
+              </h3>
+              <p className="text-foreground/70 mb-2">
+                <strong>Hongo K.A.</strong>, Ouattara K.N., Kouadio A.I.E., Yao K.O.
+              </p>
+              <p className="text-sm text-foreground/60 mb-3">
+                Access Microbiology (Microbiology Society) • {language === 'fr' ? 'Septembre 2026 (v2)' : 'September 2026 (v2)'} • DOI: 10.1099/acmi.0.001231.v2
+              </p>
+              <p className="text-foreground/70 mb-3">
+                {language === 'fr'
+                  ? "Métagénomique shotgun de cinq échantillons d'eau (baie de Biétry, lagune Ébrié, et lac Kassembié) : 131 génomes (MAGs) non caractérisés, 15 860 gènes d'hydrolases et quatre candidats PETase (BietPETase1–4) identifiés par prédiction de structure ColabFold/AlphaFold2 pour la bioremédiation du PET."
+                  : 'Shotgun metagenomics of five water samples (Biétry bay, Ébrié lagoon, and Kassembié lake): 131 uncharacterized genome bins, 15,860 hydrolase genes, and four PETase-like candidates (BietPETase1–4) identified by ColabFold/AlphaFold2 structure prediction for PET bioremediation.'}
+              </p>
+              <a
+                href="https://www.microbiologyresearch.org/content/journal/acmi/10.1099/acmi.0.001231.v2"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline text-sm"
+              >
+                {language === 'fr' ? "Voir l'article →" : 'View article →'}
+              </a>
             </div>
           </div>
 

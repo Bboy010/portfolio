@@ -15,8 +15,8 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4">Hongo Koffi Anderson</h3>
             <p className="text-foreground/70 text-sm leading-relaxed">
               {fr
-                ? 'Docteur en Microbiologie & Bioinformaticien spécialisé en surveillance des pathogènes bactériens et solutions IA agentives.'
-                : 'PhD Microbiologist & Bioinformatician specializing in bacterial pathogen surveillance and agentic AI solutions.'}
+                ? 'Doctorant en Microbiologie & Bioinformatique (Université Nangui Abrogoua), spécialisé en métagénomique, pipelines Nextflow/nf-core et IA agentive.'
+                : 'PhD Student in Microbiology & Bioinformatics (Nangui Abrogoua University), specializing in metagenomics, Nextflow/nf-core pipelines and agentic AI.'}
             </p>
           </div>
 

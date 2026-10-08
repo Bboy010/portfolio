@@ -115,7 +115,7 @@ export default function Home() {
               <div className="text-center">
                 <p className="font-bold text-lg text-foreground">Hongo Koffi Anderson</p>
                 <p className="text-sm text-foreground/60">
-                  {fr ? 'Ingénieur Datascience · Bioinformaticien · IA Agentique' : 'Data Science Engineer · Bioinformatician · Agentic AI'}
+                  {fr ? 'Doctorant en Microbiologie & Bioinformatique · Nextflow/nf-core · IA Agentique' : 'PhD Student in Microbiology & Bioinformatics · Nextflow/nf-core · Agentic AI'}
                 </p>
               </div>
 
