@@ -4,13 +4,28 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import ExpandableExperienceCard from '@/components/ExpandableExperienceCard';
 import CertificateFlipCard from '@/components/CertificateFlipCard';
 import { experiences } from '@/data/experiences';
+import {
+  getProfileTitle,
+  getSummary,
+  getBioinfSkills,
+  getDataScienceSkills,
+  getCertifications,
+  getEducation,
+  getPublication,
+  getMemberships,
+} from '@/data/cvData';
 
 export default function CV() {
   const { language, t } = useLanguage();
 
-  const profileTitle = language === 'fr'
-    ? 'Doctorant en Microbiologie & Bioinformatique • Nextflow/nf-core • IA Agentique'
-    : 'PhD Student in Microbiology & Bioinformatics • Nextflow/nf-core • Agentic AI';
+  const profileTitle = getProfileTitle(language);
+  const summaryText = getSummary(language);
+  const bioinfSkills = getBioinfSkills(language).map((s) => `• ${s}`);
+  const dataScienceSkills = getDataScienceSkills(language).map((s) => `• ${s}`);
+  const certifications = getCertifications(language);
+  const education = getEducation(language);
+  const publication = getPublication(language);
+  const memberships = getMemberships(language);
 
   const summaryTitle = language === 'fr' ? 'Résumé Professionnel' : 'Professional Summary';
   const skillsTitle = language === 'fr' ? 'Compétences Techniques' : 'Technical Skills';
@@ -23,128 +38,6 @@ export default function CV() {
     ? 'Moments mémorables lors des conférences et événements scientifiques'
     : 'Memorable moments from conferences and scientific events';
 
-  const summaryText = language === 'fr'
-    ? 'Bioinformaticien et microbiologiste spécialisé dans les pathogènes ESKAPE et les micro-organismes impliqués dans la dégradation des microplastiques, avec expertise en science des données, IA agentive, bioinformatique et développement de pipelines utilisant les outils Nextflow/nf-core. Bilan éprouvé dans la conception et la validation de workflows d\'analyse génomique dans des environnements informatiques à ressources limitées.'
-    : 'Bioinformatician and microbiologist focused on ESKAPE pathogens and microorganisms involved in microplastics degradation, with expertise in data science, agentic AI, bioinformatics, and pipeline development using Nextflow/nf-core tools. Proven track record in designing and validating genomic analysis workflows under resource-constrained computational environments.';
-
-  const bioinfSkills = language === 'fr'
-    ? [
-        '• Analyse du séquençage du génome entier (WGS)',
-        '• Génomique comparative et phylogénétique',
-        '• Profilage de la résistance aux antimicrobiens (AMR)',
-        '• Développement de pipelines Nextflow/nf-core',
-        '• Métagénomique et analyse virale',
-        '• Annotation du génome et appel de variants',
-      ]
-    : [
-        '• Whole Genome Sequencing (WGS) analysis',
-        '• Comparative genomics & phylogenetics',
-        '• Antimicrobial Resistance (AMR) profiling',
-        '• Nextflow/nf-core pipeline development',
-        '• Metagenomics & viral analysis',
-        '• Genome annotation & variant calling',
-      ];
-
-  const dataScienceSkills = language === 'fr'
-    ? [
-        '• Scripts Python et R et statistiques',
-        '• Machine Learning (NLP, classifications)',
-        '• Optimisation LLM et ingénierie des prompts',
-        '• IA agentive et applications génératives',
-        '• Visualisation de données et tableaux de bord',
-        '• Contrôle de version Git/GitHub',
-      ]
-    : [
-        '• Python & R scripting & statistics',
-        '• Machine Learning (NLP, classifications)',
-        '• LLM optimization & prompt engineering',
-        '• Agentic AI & generative applications',
-        '• Data visualization & dashboards',
-        '• Git/GitHub version control',
-      ];
-
-  const certifications = [
-    {
-      title: 'Build with the Anthropic API',
-      issuer: 'Anthropic',
-      date: language === 'fr' ? 'Octobre 2026' : 'October 2026',
-      imageUrl: 'https://drive.google.com/thumbnail?id=1i1yB_Aa3Lw_OXMrpoPzc1mRWsGk9LDjL&sz=w1000',
-    },
-    {
-      title: 'Build with nf-core',
-      issuer: 'Seqera - Nextflow Training Week 2026-Q3',
-      date: language === 'fr' ? 'Octobre 2026' : 'October 2026',
-      imageUrl: 'https://drive.google.com/thumbnail?id=1ejWlXu3fYx_jY1_sY-XaPvlLDhT6uoz4&sz=w1000',
-    },
-    {
-      title: 'Hello Nextflow',
-      issuer: 'Seqera - Nextflow Training Week 2026-Q3',
-      date: language === 'fr' ? 'Octobre 2026' : 'October 2026',
-      imageUrl: 'https://drive.google.com/thumbnail?id=1JXw4LHJbfJ2TH2uLvmSQC3hcY0twBDXQ&sz=w1000',
-    },
-    {
-      title: 'Claude Code in Action',
-      issuer: 'Anthropic',
-      date: language === 'fr' ? 'Mai 2026' : 'May 2026',
-      imageUrl: 'https://drive.google.com/thumbnail?id=1oMwyf1DAwvSfCQpwYKVEMTkMwxvH2K-x&sz=w1000',
-    },
-    {
-      title: 'Claude Code 101',
-      issuer: 'Anthropic',
-      date: language === 'fr' ? 'Avril 2026' : 'April 2026',
-      imageUrl: 'https://drive.google.com/thumbnail?id=1cy1K6XLe9PFq1DCQAbL8MrTFaCKPZBo_&sz=w1000',
-    },
-    {
-      title: 'Machine Learning',
-      issuer: 'ALX Foundation',
-      date: language === 'fr' ? 'Avril 2026' : 'April 2026',
-      imageUrl: 'https://lh3.googleusercontent.com/d/1Pq-ubIykzMuoGs_CnBLt-Sf0g2rqEx_k',
-    },
-    {
-      title: language === 'fr' ? 'Ingénieur Datascience' : 'Data Science Engineer',
-      issuer: 'ALX Foundation',
-      date: language === 'fr' ? 'Avril 2026' : 'April 2026',
-      imageUrl: 'https://lh3.googleusercontent.com/d/1YPVN3udXf0jvWYcq-5sNHAyw4YtsU16I',
-    },
-    {
-      title: language === 'fr'
-        ? 'Fondamentaux de la Science des Données en Médecine de Précision'
-        : 'Fundamentals of Data Science in Precision Medicine',
-      issuer: 'Stanford Data Ocean',
-      date: 'June 2025',
-      imageUrl: 'https://lh3.googleusercontent.com/d/1avMjLeUatbU5RUcO38cc9zCUK8kq_EWs',
-    },
-    {
-      title: 'ALX AI Starter Kit Certificate',
-      issuer: 'ALX Foundation',
-      date: 'March 2025',
-      imageUrl: 'https://lh3.googleusercontent.com/d/13vBt7ZOvYCwrKwDNfue0aRQDpovm_EvP',
-    },
-    {
-      title: language === 'fr' ? 'Métagénomique pour Débutants' : 'Metagenomics for Beginners',
-      issuer: 'NyBerMan Bioinformatics Europe',
-      date: 'August 2024 (Score: 100%)',
-      imageUrl: 'https://lh3.googleusercontent.com/d/1RQi3AdoDOKhRw-sBOB9vz_NanShr2UPP',
-    },
-    {
-      title: language === 'fr' ? 'Bioinformatique pour Biologistes' : 'Bioinformatics for Biologists',
-      issuer: 'Wellcome Connecting Science',
-      date: 'Oct 2023 (Score: 90%)',
-      imageUrl: 'https://lh3.googleusercontent.com/d/1HSPjCr7c1IFbZsqIRAMuG5c9bodsyS2I',
-    },
-    {
-      title: language === 'fr' ? 'Formation en Ingénierie Logicielle' : 'Software Engineering Training',
-      issuer: 'ALX Foundation',
-      date: 'Nov 2023',
-      imageUrl: 'https://lh3.googleusercontent.com/d/1ADfCRLgs8UYJYO4s010uHnwkUoQZWoDG',
-    },
-    {
-      title: 'GenAI from Kaggle',
-      issuer: 'Kaggle',
-      date: 'March 31 - April 4, 2025',
-      imageUrl: 'https://lh3.googleusercontent.com/d/1cRTnRY8Dum2rrr2d52F8paljww5TeusX',
-    },
-  ];
 
   // Conference photos — add your photos to /public/conferences/ and list them here
   const conferencePhotos: { src: string; caption: string; captionFr: string }[] = [
@@ -186,12 +79,22 @@ export default function CV() {
                 </div>
               </div>
             </div>
-            <a href="https://drive.google.com/uc?export=download&id=1zu4fyvIU0VxKyaRED-ZKg9rJ8K2NF7WH" target="_blank" rel="noopener noreferrer">
-              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 smooth-transition">
-                <Download size={20} className="mr-2" />
-                {t('cv.download')}
-              </Button>
-            </a>
+            <div className="flex flex-col items-start gap-2">
+              <a href="/cv-print" target="_blank" rel="noopener noreferrer">
+                <Button className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 smooth-transition">
+                  <Download size={20} className="mr-2" />
+                  {t('cv.download')}
+                </Button>
+              </a>
+              <a
+                href="https://drive.google.com/uc?export=download&id=1zu4fyvIU0VxKyaRED-ZKg9rJ8K2NF7WH"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-foreground/60 hover:text-primary hover:underline"
+              >
+                {language === 'fr' ? 'Version PDF statique' : 'Static PDF version'}
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -260,53 +163,13 @@ export default function CV() {
               {educationTitle}
             </h2>
             <div className="space-y-6">
-              <div className="border-l-4 border-purple-500 pl-6">
-                <h3 className="text-xl font-semibold mb-1">
-                  {language === 'fr' ? 'Doctorant - Microbiologie Bioinformatique' : 'PhD Student - Microbiology Bioinformatics'}
-                </h3>
-                <p className="text-purple-600 dark:text-purple-400 font-medium mb-2">
-                  {language === 'fr'
-                    ? 'Université NANGUI Abrogoua • Mars 2024 - Présent'
-                    : 'NANGUI Abrogoua University • March 2024 - Present'}
-                </p>
-                <p className="text-foreground/70">
-                  {language === 'fr'
-                    ? 'Thème : Évaluation du potentiel génomique des communautés microbiennes du lac Kassembie pour la dégradation des microplastiques'
-                    : 'Theme: Evaluation of the genomic potential of microbial communities in Lake Kassembie for microplastics degradation'}
-                </p>
-              </div>
-
-              <div className="border-l-4 border-purple-500 pl-6">
-                <h3 className="text-xl font-semibold mb-1">
-                  {language === 'fr' ? 'Master - Génétique et Amélioration des Bioressources' : 'Master\'s Degree - Genetics and Improvement of Bioresources'}
-                </h3>
-                <p className="text-purple-600 dark:text-purple-400 font-medium mb-2">
-                  {language === 'fr'
-                    ? 'Université NANGUI Abrogoua • Fév 2022 - Sept 2023 (GPA: 14.21/20)'
-                    : 'NANGUI Abrogoua University • Feb 2022 - Sept 2023 (GPA: 14.21/20)'}
-                </p>
-                <p className="text-foreground/70">
-                  {language === 'fr'
-                    ? 'Thème : Caractérisation morphométrique de l\'abeille Apis mellifera adansonii'
-                    : 'Theme: Morphometric characterization of the honeybee Apis mellifera adansonii'}
-                </p>
-              </div>
-
-              <div className="border-l-4 border-purple-500 pl-6">
-                <h3 className="text-xl font-semibold mb-1">
-                  {language === 'fr' ? 'Licence - Production Animale' : 'Bachelor\'s Degree - Animal Production'}
-                </h3>
-                <p className="text-purple-600 dark:text-purple-400 font-medium mb-2">
-                  {language === 'fr'
-                    ? 'Université NANGUI Abrogoua • Mars 2020 - Jan 2021 (GPA: 12.30/20)'
-                    : 'NANGUI Abrogoua University • March 2020 - Jan 2021 (GPA: 12.30/20)'}
-                </p>
-                <p className="text-foreground/70">
-                  {language === 'fr'
-                    ? 'Thème : Relation longueur-longueur des espèces de requins du genre Carcharhinus'
-                    : 'Theme: Length-length relationship of shark species of the genus Carcharhinus'}
-                </p>
-              </div>
+              {education.map((item, idx) => (
+                <div key={idx} className="border-l-4 border-purple-500 pl-6">
+                  <h3 className="text-xl font-semibold mb-1">{item.title}</h3>
+                  <p className="text-purple-600 dark:text-purple-400 font-medium mb-2">{item.institution}</p>
+                  <p className="text-foreground/70">{item.theme}</p>
+                </div>
+              ))}
             </div>
           </div>
 
@@ -314,28 +177,20 @@ export default function CV() {
           <div className="mb-12">
             <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
               <BookOpen size={32} className="text-primary" />
-              {language === 'fr' ? 'Publications' : 'Publications'}
+              Publications
             </h2>
             <div className="border-l-4 border-purple-500 pl-6">
               <p className="text-xs font-semibold uppercase tracking-wide text-purple-600 dark:text-purple-400 mb-2">
-                {language === 'fr' ? 'Preprint • Auteur principal' : 'Preprint • First author'}
+                {publication.status}
               </p>
-              <h3 className="text-xl font-semibold mb-2">
-                Novel putative PETase candidates from metagenomic mining of Ebrié lagoon and Kassembié lake, Côte d'Ivoire
-              </h3>
+              <h3 className="text-xl font-semibold mb-2">{publication.title}</h3>
               <p className="text-foreground/70 mb-2">
-                <strong>Hongo K.A.</strong>, Ouattara K.N., Kouadio A.I.E., Yao K.O.
+                <strong>Hongo K.A.</strong>, {publication.authors.replace('Hongo K.A., ', '')}
               </p>
-              <p className="text-sm text-foreground/60 mb-3">
-                Access Microbiology (Microbiology Society) • {language === 'fr' ? 'Septembre 2026 (v2)' : 'September 2026 (v2)'} • DOI: 10.1099/acmi.0.001231.v2
-              </p>
-              <p className="text-foreground/70 mb-3">
-                {language === 'fr'
-                  ? "Métagénomique shotgun de cinq échantillons d'eau (baie de Biétry, lagune Ébrié, et lac Kassembié) : 131 génomes (MAGs) non caractérisés, 15 860 gènes d'hydrolases et quatre candidats PETase (BietPETase1–4) identifiés par prédiction de structure ColabFold/AlphaFold2 pour la bioremédiation du PET."
-                  : 'Shotgun metagenomics of five water samples (Biétry bay, Ébrié lagoon, and Kassembié lake): 131 uncharacterized genome bins, 15,860 hydrolase genes, and four PETase-like candidates (BietPETase1–4) identified by ColabFold/AlphaFold2 structure prediction for PET bioremediation.'}
-              </p>
+              <p className="text-sm text-foreground/60 mb-3">{publication.venue}</p>
+              <p className="text-foreground/70 mb-3">{publication.abstract}</p>
               <a
-                href="https://www.microbiologyresearch.org/content/journal/acmi/10.1099/acmi.0.001231.v2"
+                href={publication.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary hover:underline text-sm"
@@ -373,54 +228,12 @@ export default function CV() {
           <div className="mb-12">
             <h2 className="text-3xl font-bold mb-6">{membershipsTitle}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="p-4 rounded-lg bg-card border border-border">
-                <p className="font-semibold text-foreground">
-                  {language === 'fr'
-                    ? 'Alliance de Santé Publique pour l\'Épidémiologie Génomique (PHA4GE)'
-                    : 'Public Health Alliance for Genomic Epidemiology (PHA4GE)'}
-                </p>
-                <p className="text-sm text-foreground/70">
-                  {language === 'fr'
-                    ? 'Réseau international pour l\'épidémiologie génomique'
-                    : 'International network for genomic epidemiology'}
-                </p>
-              </div>
-              <div className="p-4 rounded-lg bg-card border border-border">
-                <p className="font-semibold text-foreground">
-                  {language === 'fr'
-                    ? 'Projet Africain du Biogénome (AfricaBP)'
-                    : 'African BioGenome Project (AfricaBP)'}
-                </p>
-                <p className="text-sm text-foreground/70">
-                  {language === 'fr'
-                    ? 'Initiative panafricaine pour la génomique de la biodiversité'
-                    : 'Pan-African initiative for biodiversity genomics'}
-                </p>
-              </div>
-              <div className="p-4 rounded-lg bg-card border border-border">
-                <p className="font-semibold text-foreground">
-                  {language === 'fr'
-                    ? 'Centres de Contrôle et de Prévention des Maladies Afrique (AfricaCDC)'
-                    : 'Centres for Disease Control and Prevention (AfricaCDC)'}
-                </p>
-                <p className="text-sm text-foreground/70">
-                  {language === 'fr'
-                    ? 'Réseau continental de santé publique'
-                    : 'Continental public health network'}
-                </p>
-              </div>
-              <div className="p-4 rounded-lg bg-card border border-border">
-                <p className="font-semibold text-foreground">
-                  {language === 'fr'
-                    ? 'Laboratoire Local d\'ADN Environnemental et Microbiologie (eDNA Lab)'
-                    : 'Local lab for environmental DNA and microbiology (eDNA Lab)'}
-                </p>
-                <p className="text-sm text-foreground/70">
-                  {language === 'fr'
-                    ? 'Laboratoire de recherche en biodiversité'
-                    : 'Biodiversity research laboratory'}
-                </p>
-              </div>
+              {memberships.map((m, idx) => (
+                <div key={idx} className="p-4 rounded-lg bg-card border border-border">
+                  <p className="font-semibold text-foreground">{m.name}</p>
+                  <p className="text-sm text-foreground/70">{m.description}</p>
+                </div>
+              ))}
             </div>
           </div>
 

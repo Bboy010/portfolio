@@ -236,3 +236,35 @@
     color: var(--color-primary);
   }
 }
+
+/* ---- Printable CV (/cv-print) ---- */
+.cv-print-root { background: #f3f4f6; min-height: 100vh; color: #111; }
+.cv-toolbar { position: sticky; top: 0; background: #fff; border-bottom: 1px solid #e5e7eb; z-index: 10; }
+.cv-toolbar-inner { max-width: 210mm; margin: 0 auto; padding: 10px 16px; display: flex; justify-content: space-between; align-items: center; }
+.cv-lang-btn { padding: 4px 12px; border: 1px solid #d1d5db; border-radius: 6px; background: #fff; font-size: 13px; }
+.cv-lang-btn-active { background: #111; color: #fff; border-color: #111; }
+.cv-print-btn { display: inline-flex; gap: 6px; align-items: center; padding: 8px 14px; background: #111; color: #fff; border-radius: 6px; font-size: 14px; }
+.cv-page { width: 210mm; max-width: 100%; margin: 16px auto; padding: 12mm; background: #fff; font-size: 9.5pt; line-height: 1.35; box-shadow: 0 1px 6px rgba(0,0,0,.15); }
+.cv-page h1 { font-size: 20pt; font-weight: 700; margin: 0; }
+.cv-page .cv-title { font-size: 10.5pt; color: #374151; margin: 2px 0; }
+.cv-page .cv-contact { font-size: 8.5pt; color: #4b5563; margin: 0; }
+.cv-page a { color: #1d4ed8; text-decoration: none; }
+.cv-page .cv-header { border-bottom: 2px solid #111; padding-bottom: 6px; margin-bottom: 6px; }
+.cv-page .cv-section-title { font-size: 10.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; border-bottom: 1px solid #d1d5db; margin: 8px 0 4px; padding-bottom: 1px; }
+.cv-page h3 { font-size: 9.5pt; font-weight: 600; margin: 0 0 2px; }
+.cv-page p { margin: 0 0 2px; }
+.cv-page ul { margin: 0; padding-left: 14px; list-style: disc; }
+.cv-page .cv-two-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.cv-page .cv-item { margin-bottom: 4px; break-inside: avoid; }
+.cv-page .cv-item-head { display: flex; justify-content: space-between; gap: 8px; }
+.cv-page .cv-item-head span { color: #4b5563; font-size: 8.5pt; text-align: right; }
+.cv-page .cv-certs { columns: 2; column-gap: 16px; font-size: 8.5pt; }
+.cv-page .cv-certs li { break-inside: avoid; }
+
+@page { size: A4; margin: 0; }
+@media print {
+  .no-print { display: none !important; }
+  .cv-print-root { background: #fff; }
+  .cv-page { margin: 0; box-shadow: none; width: 100%; padding: 12mm; }
+  body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
